@@ -6,7 +6,7 @@
 /*   By: awali-al <awali-al@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/06 15:08:44 by aminewalial       #+#    #+#             */
-/*   Updated: 2019/09/17 15:17:19 by awali-al         ###   ########.fr       */
+/*   Updated: 2019/09/18 15:54:39 by awali-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,8 @@ void		show_dir(char *path, struct s_func fun, unsigned short o)
 		}
 		closedir(dp);
 		lis_dis(head, fun, l, o);
-		free_lst(head);
+		free(head);
 	}
-	free(path);
 }
 
 static void	name_dir(char *path, struct s_func fun, unsigned short o)
@@ -56,6 +55,7 @@ static void	name_dir(char *path, struct s_func fun, unsigned short o)
 		name = str;
 	fun.cf(name, s.st_mode);
 	free(str);
+	str = NULL;
 	write(1, "\n", 1);
 }
 

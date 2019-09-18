@@ -6,7 +6,7 @@
 /*   By: awali-al <awali-al@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/04 19:55:19 by aminewalial       #+#    #+#             */
-/*   Updated: 2019/09/16 20:02:37 by awali-al         ###   ########.fr       */
+/*   Updated: 2019/09/18 15:37:52 by awali-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ typedef struct		s_func
 	t_sfun			sf;
 }					t_func;
 
-int					opt_fil(char **av, unsigned short *o);
+int					options(int ac, char **av, unsigned short *o);
 void				fun_ini(t_func *fun, unsigned short o);
 
 t_len				len_ini(void);

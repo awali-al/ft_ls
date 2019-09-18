@@ -6,7 +6,7 @@
 /*   By: awali-al <awali-al@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/07 16:25:59 by aminewalial       #+#    #+#             */
-/*   Updated: 2019/08/08 19:55:06 by awali-al         ###   ########.fr       */
+/*   Updated: 2019/09/18 17:37:20 by awali-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ void	dis_user(uid_t uid, int max)
 	int		i;
 	int		d;
 
-	d = max - int_len((int)uid) + 2;
+	d = max - int_len((int)uid) + 4;
 	i = 0;
 	ft_putstr(getpwuid(uid)->pw_name);
 	while (i < d)
@@ -82,7 +82,7 @@ void	dis_grup(gid_t gid, int max)
 	int		i;
 	int		d;
 
-	d = max - int_len((int)gid) + 2;
+	d = max - int_len((int)gid) + 3;
 	i = 0;
 	ft_putstr(getgrgid(gid)->gr_name);
 	while (i < d)

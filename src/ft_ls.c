@@ -6,7 +6,7 @@
 /*   By: awali-al <awali-al@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/04 19:54:20 by aminewalial       #+#    #+#             */
-/*   Updated: 2019/08/08 20:20:00 by awali-al         ###   ########.fr       */
+/*   Updated: 2019/09/18 16:43:48 by awali-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@ int		main(int ac, char **av)
 	int				i;
 	t_func			fun;
 
-	i = opt_fil(av, &o);
+	i = options(ac, av, &o);
 	fun_ini(&fun, o);
 	if (i == ac)
-		fun.ff(ft_strdup("./"), fun, o);
+		fun.ff("./", fun, o);
 	else
 		args(av + i, ac - i, o, fun);
 	return (0);

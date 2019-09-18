@@ -6,7 +6,7 @@
 /*   By: awali-al <awali-al@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/07 21:35:40 by aminewalial       #+#    #+#             */
-/*   Updated: 2019/08/08 20:20:22 by awali-al         ###   ########.fr       */
+/*   Updated: 2019/09/18 17:46:22 by awali-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,16 @@
 void		erro(char *path)
 {
 	char		*err;
+	int			n;
 
+	err = NULL;
 	write(2, "ft_ls: ", 7);
-	err = ft_strjoin(path, ": ");
+	n = ft_strlen(path) - 1;
+	if (path[n] == '/')
+		err = ft_strndup(path, n);
 	perror(err);
-	free(err);
+	err ? free(err) : 0;
+	err = NULL;
 }
 
 static char	*name_check(char *file)
@@ -66,6 +71,7 @@ int			can_add(unsigned short o, char *file, int n)
 				return (0);
 		}
 		free(str);
+		str = NULL;
 	}
 	return (1);
 }

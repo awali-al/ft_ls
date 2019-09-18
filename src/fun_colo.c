@@ -6,7 +6,7 @@
 /*   By: awali-al <awali-al@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/06 14:08:28 by aminewalial       #+#    #+#             */
-/*   Updated: 2019/08/08 23:54:44 by awali-al         ###   ########.fr       */
+/*   Updated: 2019/09/18 14:37:10 by awali-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ static void	k_pop(char *path, mode_t m)
 	ft_putstr(name);
 	ft_putstr(COL_RESET);
 	free(col);
+	col = NULL;
 }
 
 static void	metal(char *path, mode_t mode)

@@ -6,7 +6,7 @@
 /*   By: awali-al <awali-al@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/07 22:19:34 by aminewalial       #+#    #+#             */
-/*   Updated: 2019/09/17 15:24:26 by awali-al         ###   ########.fr       */
+/*   Updated: 2019/09/18 16:53:25 by awali-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,5 +94,4 @@ void		args(char **av, int ac, unsigned short o, t_func fun)
 	len_edi(&l);
 	arg_dis(head, fun, o, l);
 	free_lst(head);
-	printf("helloooooooooooooooooooo \n");
 }

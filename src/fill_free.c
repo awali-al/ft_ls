@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fill_free.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: awali-al <awali-al@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aakfas <aakfas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/07 14:20:31 by aminewalial       #+#    #+#             */
-/*   Updated: 2019/08/09 14:41:45 by awali-al         ###   ########.fr       */
+/*   Updated: 2019/09/17 18:05:02 by aakfas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,21 @@ t_lof	*struc_fill(char *file, t_len *l)
 
 void	free_lst(t_lof *head)
 {
-	if (head == NULL)
+	/*if (head == NULL)
 		return ;
 	if (head->next)
 		free_lst(head->next);
 	free(head->p);
 	head->p = NULL;
 	free(head);
-	head = NULL;
+	head = NULL;*/
+	t_lof *next;
+
+	while (head)
+	{
+		next = head->next;
+		free(head->p);
+		free(head);
+		head = next;
+	}
 }

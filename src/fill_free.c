@@ -6,7 +6,7 @@
 /*   By: awali-al <awali-al@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/07 14:20:31 by aminewalial       #+#    #+#             */
-/*   Updated: 2019/09/18 17:03:03 by awali-al         ###   ########.fr       */
+/*   Updated: 2019/09/19 16:46:05 by awali-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,9 @@ void	free_lst(t_lof *head)
 
 	while (head)
 	{
-		printf("%p\t%p\n", head, head->p);
 		next = head->next;
-		head->p ? free(head->p) : 0;
+		if (head->p)
+			free(head->p);
 		head->p = NULL;
 		free(head);
 		head = next;

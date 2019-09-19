@@ -6,7 +6,7 @@
 /*   By: awali-al <awali-al@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/08 12:55:23 by aminewalial       #+#    #+#             */
-/*   Updated: 2019/09/18 16:49:02 by awali-al         ###   ########.fr       */
+/*   Updated: 2019/09/19 16:43:07 by awali-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void	fol_dis(t_lof *h, t_lof *tmp, t_func fun, unsigned short o)
 	!buf ? buf = tmp->p : 0;
 	n = ft_strlen(buf) - 1;
 	str = buf[n] == '/' ? ft_strdup(buf) : ft_strjoin(buf, "/");
-	free(buf);
+	buf != tmp->p ? free(buf) : 0;
 	buf = NULL;
 	show_dir(str, fun, o);
 }
